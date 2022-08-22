@@ -23,6 +23,6 @@ Klekota J, Roth F: *Chemical substructures that enrich for biological activity*,
 
 **DrawFingerprints(krfps, molsPerRow=3)**
 
-**SearchKRFP(find)**
+**FindKRFP(find)**
 
 **HighlightKRFP(mol, krfp, verbose=True)**
