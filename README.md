@@ -9,7 +9,9 @@ Klekota J, Roth F: *Chemical substructures that enrich for biological activity*,
 
 ## Functions
 **GenerateKRFingerprints(structures, count=False, output_type='list')**
-
+> sdds
+> - dsd
+> 
 **ListToDictionary(krfp_list)**
 
 **MultipleDescriptorsDataFrame(data, structures_column, count=False)**
