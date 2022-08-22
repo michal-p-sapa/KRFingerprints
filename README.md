@@ -1,9 +1,12 @@
 # KRFingerprints
 
-Based on: 
-Klekota J, Roth F: *Chemical substructures that enrich for biological activity*, Bioinformatics, 2008, 24(21):2518-2525
+Script which generate Klekota-Roth fingerprints based on structures [1]. Additionally it allows to find fingerprint based on SMILES
 
-**Requierments:**
+
+[1] Klekota J, Roth F: *Chemical substructures that enrich for biological activity*, Bioinformatics, 2008, 24(21):2518-2525
+ 
+
+**Requirements:**
 - numpy
 - pandas
 - rdkit
@@ -13,8 +16,10 @@ Klekota J, Roth F: *Chemical substructures that enrich for biological activity*,
 ## Functions
 **GenerateKRFingerprints(structures, count=False, output_type='list')**
 > sdds
-> - dsd
-> 
+> - Arguments
+>   - dgdf
+> - Return
+
 **ListToDictionary(krfp_list)**
 
 **MultipleDescriptorsDataFrame(data, structures_column, count=False)**
