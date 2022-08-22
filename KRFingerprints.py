@@ -6,6 +6,10 @@ from rdkit.Chem import MolStandardize
 from rdkit.Chem import Draw
 from rdkit.Chem.Fingerprints import FingerprintMols
 import time
+import matplotlib.pyplot as plt
+import numpy as np
+
+
 
 class KRFingerprints:
     
@@ -86,10 +90,22 @@ class KRFingerprints:
     
     def DrawFingerprint(krfp):
         fp = KRFingerprints.GetKRFPDictMol[krfp]
-        img = Draw.MolToImage(fp)
+        img = Draw.MolToImage(fp, legend = krfp)
 
         return img
     
+    def DrawFingerprints(krfps, molsPerRow=3):
+        if isinstance(krfps, str):
+            krfps = [krfps]
+        
+        imgs = [KRFingerprints.DrawFingerprint(x) for x in krfps]
+
+        structs = [KRFingerprints.GetKRFPDictMol[x] for x in krfps]
+        img = Draw.MolsToGridImage(structs, molsPerRow=3, legends=krfps,subImgSize=(300, 300))
+
+        return img       
+
+
     def SearchKRFP(find):
         find = Chem.MolFromSmiles(find)
         find_fps = FingerprintMols.FingerprintMol(find)
@@ -97,15 +113,17 @@ class KRFingerprints:
         tanimotos =  {x: DataStructs.TanimotoSimilarity(find_fps, krfp_fps[x]) for x in KRFingerprints.GetKRFPKeys}
         tanimotos = dict(sorted(tanimotos.items(), key=lambda item:item[1], reverse=True))
         
-        tanimotos_return=[]
+        tanimotos_return={}
         
         for i in tanimotos:
             if tanimotos[i]==1.0:
-                tanimotos_return.append((i,tanimotos[i]))
+                tanimotos_return[i] = tanimotos[i]
         
+      
         if len(tanimotos_return)==0:
-            tanimotos_return = [tanimotos.items()[0]]
+            tanimotos_return[list(tanimotos.items())[0][0]] = list(tanimotos.items())[0][1]
         
+
         return tanimotos_return
     
     def HighlightKRFP(mol, krfp, verbose=True):
@@ -124,4 +142,4 @@ class KRFingerprints:
             print(krfp)
             print('Count: '+str(int(len(atoms)/len(fp.GetAtoms()))))
 
-        return img 
+        return img
