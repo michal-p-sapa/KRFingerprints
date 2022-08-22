@@ -8,3 +8,16 @@ Klekota J, Roth F: *Chemical substructures that enrich for biological activity*,
 ## Variables
 
 ## Functions
+**GenerateKRFingerprints(structures, count=False, output_type='list')**
+
+**ListToDictionary(krfp_list)**
+
+**MultipleDescriptorsDataFrame(data, structures_column, count=False)**
+
+**DrawFingerprint(krfp)**
+
+**DrawFingerprints(krfps, molsPerRow=3)**
+
+**SearchKRFP(find)**
+
+**HighlightKRFP(mol, krfp, verbose=True)**
