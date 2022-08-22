@@ -1,6 +1,6 @@
 # KRFingerprints
 
-Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. Additionally it allows to find fingerprint based on SMILES or highlight fingerprint in molecules. List of fingerprints and output format was based on PaDEL-Descriptor software \[2\].
+Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. In addition, it allows you to find a fingerprint using SMILES or highlight  the fingerprint in molecules. List of fingerprints was based on PaDEL-Descriptor software \[2\].
 
 **Requirements:**
 - numpy
