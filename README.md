@@ -1,9 +1,9 @@
 # KRFingerprints
 
-Script which generate Klekota-Roth fingerprints based on structures [1]. Additionally it allows to find fingerprint based on SMILES
+Script which generate Klekota-Roth fingerprints based on structures \[1\]. Additionally it allows to find fingerprint based on SMILES or highlight fingerprint in molecules
 
 
-[1] Klekota J, Roth F: *Chemical substructures that enrich for biological activity*, Bioinformatics, 2008, 24(21):2518-2525
+\[1\] Klekota J, Roth F: *Chemical substructures that enrich for biological activity*, Bioinformatics, 2008, 24(21):2518-2525
  
 
 **Requirements:**
