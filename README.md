@@ -37,10 +37,11 @@ Script which generate Klekota-Roth fingerprints based on structures [1]. Additio
 >     - krfp(*string*) - Klekota-Roth fingerprint
 >     - tanimoto_value(*float*) - similarity calculated using TanimotoSimilarity
 
-**HighlightKRFP(mols, krfp, verbose=True)**
+**HighlightKRFP(mols, krfp, names=None)**
 > Highlight a Klekota-Roth fingerprint in structures
 > - Arguments
 >   - mols(*list*) - list of structures in Mol format
 >   - krfp(*string*) - Klekota-Roth fingerprint
+>   - names(*list\[string\]*) - list of molecules' names
 > - Return
 >   - (*Image*) - molecules with highlighted fragment
