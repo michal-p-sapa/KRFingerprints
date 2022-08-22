@@ -27,20 +27,26 @@ Script which generate Klekota-Roth fingerprints based on structures [1]. Additio
 **DrawFingerprint(krfp)**
 
 **DrawFingerprints(krfps, molsPerRow=3)**
+> Draw selected Klekota-Roth fingerprints
+> - Parameters
+>   - krfps(*list\[string\]*) - Klekota-Roth fingerprints
+>   - molsPerRow=3(*int*) - number of structures in a row
+> - Return
+>   - (*Image*) - fingerprints
 
 **FindKRFP(find)**
 > Find a similar Klekota-Roth fingerprint based on SMILES
 > - Parameters
 >   - find (*string*) - SMILES of fragment
-> - Parameters
->   - (*list*) - list of tuples (krfp, tanimoto_value)
+> - Return
+>   - (*list\[tuple\]*) - list of tuples (krfp, tanimoto_value)
 >     - krfp(*string*) - Klekota-Roth fingerprint
 >     - tanimoto_value(*float*) - similarity calculated using TanimotoSimilarity
 
 **HighlightKRFP(mols, krfp, names=None)**
 > Highlight a Klekota-Roth fingerprint in structures
-> - Arguments
->   - mols(*list*) - list of structures in Mol format
+> - Parameters
+>   - mols(*list\[rdkit.Chem.Mol\]*) - list of structures in Mol format
 >   - krfp(*string*) - Klekota-Roth fingerprint
 >   - names(*list\[string\]*) - list of molecules' names
 > - Return
