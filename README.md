@@ -14,13 +14,24 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
  
 \[2\] Yap CW: *PaDEL-descriptor: an open source software to calculate molecular descriptors and fingerprints*, J Comput Chem, 2011, 32(7):1466-1474
 
-## Variables
 
-## Functions
+## Documentation
+### Variables
+**KRFPDictSmarts**
+> Dictionary of 4860 Klekota-Roth fingerprints' structures in SMART format
+
+**KRFPDictMol**
+> Dictionary of 4860 Klekota-Roth fingerprints' structures in Mol format
+
+**KRFPKeys**
+> Names of 4860 Klekota-Roth fingerprints
+
+
+### Functions
 **GenerateKRFingerprints(structures, count=False, output_type='list', verbose=True)**
 > Generate list, dictionary or DataFrame of Klekota-Roth fingerprints for structures
 > - Parameters
->   - structures(*list[], string, rdkit.Chem.Mol*) - list of structures in SMILES or Mol format
+>   - structures(*list\[\], string, rdkit.Chem.Mol*) - list of structures in SMILES or Mol format
 >   - count(*bool*) - if function should count number of each fingerprint in molecule
 >   - output_type(*string*) - type of output, possible values: {'list','dictionary','dataframe'}
 >   - verbose=(*bool*) - show information about progress
@@ -28,6 +39,12 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 >   - (*list, dictionary, DataFrame*) - list, dictionary or DataFrame of Klekota-Roth fingerprints
 
 **ListToDictionary(krfp_list)**
+> Transform list of 4860 Klekota-Roth fingerprints to dictionary
+> - Parameters
+>   - structures(*list\[\]*) - list of 4860 Klekota-Roth fingerprints
+> - Return
+>   - (*dictionary*) - dictionary of 4860 Klekota-Roth fingerprints
+
 
 **MultipleDescriptorsDataFrame(data, structures_column, count=False, verbose=True)**
 > Update DataFrame by generating Klekota-Roth fingerprints for structures
