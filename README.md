@@ -17,13 +17,13 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 
 ## Documentation
 ### Variables
-**KRFPDictSmarts**
+**KRFPDictSmarts(*dictionary*)**
 > Dictionary of 4860 Klekota-Roth fingerprints' structures in SMART format
 
-**KRFPDictMol**
+**KRFPDictMol(*dictionary*)**
 > Dictionary of 4860 Klekota-Roth fingerprints' structures in Mol format
 
-**KRFPKeys**
+**KRFPKeys(*list*)**
 > Names of 4860 Klekota-Roth fingerprints
 
 
