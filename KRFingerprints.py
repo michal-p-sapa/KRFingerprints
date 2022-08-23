@@ -1,4 +1,3 @@
-#load KR fingerprints
 import  json
 import pandas as pd
 from rdkit import Chem, DataStructs, RDLogger
@@ -73,7 +72,7 @@ class KRFingerprints:
     
         return krfp_ligands
     
-    def MultipleDescriptorsDataFrame(data, structures_column, count=False, verbose=True):
+    def GenerateKRFingerprintsToDataFrame(data, structures_column, count=False, verbose=True):
         
         krfp_ligands = KRFingerprints.GenerateKRFingerprints(data[structures_column], count, 'dictionary', verbose=verbose)
         data = pd.concat([data,pd.DataFrame(krfp_ligands,index=data.index, columns=list(KRFingerprints.KRFPDictSmarts.keys()))],axis=1)
