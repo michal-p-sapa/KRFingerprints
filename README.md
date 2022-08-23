@@ -3,6 +3,7 @@
 Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. In addition, it allows you to find a fingerprint using SMILES or highlight  the fingerprint in molecules. List of fingerprints was based on PaDEL-Descriptor software \[2\].
 
 **Requirements:**
+- python3
 - numpy
 - pandas
 - rdkit
@@ -16,17 +17,35 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 ## Variables
 
 ## Functions
-**GenerateKRFingerprints(structures, count=False, output_type='list')**
-> sdds
+**GenerateKRFingerprints(structures, count=False, output_type='list', verbose=True)**
+> Generate list, dictionary or DataFrame of Klekota-Roth fingerprints for structures
 > - Parameters
->   - dgdf
+>   - structures(*list[], string, rdkit.Chem.Mol*) - list of structures in SMILES or Mol format
+>   - count(*bool*) - if function should count number of each fingerprint in molecule
+>   - output_type(*string*) - type of output, possible values: {'list','dictionary','dataframe'}
+>   - verbose=(*bool*) - show information about progress
 > - Return
+>   - (*list, dictionary, DataFrame*) - list, dictionary or DataFrame of Klekota-Roth fingerprints
 
 **ListToDictionary(krfp_list)**
 
-**MultipleDescriptorsDataFrame(data, structures_column, count=False)**
+**MultipleDescriptorsDataFrame(data, structures_column, count=False, verbose=True)**
+> Update DataFrame by generating Klekota-Roth fingerprints for structures
+> - Parameters
+>   - data(*DataFrame*) - DataFrame which includes structures in SMILES or Mol format
+>   - structures_column(*string*) - name of column which includes structures in SMILES or Mol format
+>   - count(*bool*) - if function should count number of each fingerprint in molecule
+>   - output_type(*string*) - type of output, possible values: {'list','dictionary','dataframe'}
+>   - verbose=(*bool*) - show information about progress
+> - Return
+>   - (*DataFrame*) - updated DataFrame with Klekota-Roth fingerprints
 
 **DrawFingerprint(krfp)**
+> Draw a selected Klekota-Roth fingerprints
+> - Parameters
+>   - krfp(*string*) - Klekota-Roth fingerprint
+> - Return
+>   - (*Image*) - fingerprints
 
 **DrawFingerprints(krfps, molsPerRow=3)**
 > Draw selected Klekota-Roth fingerprints
@@ -39,7 +58,7 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 **FindKRFP(find)**
 > Find a similar Klekota-Roth fingerprint based on SMILES
 > - Parameters
->   - find (*string*) - SMILES of fragment
+>   - find(*string*) - SMILES of fragment
 > - Return
 >   - (*list\[tuple\]*) - list of tuples (krfp, tanimoto_value)
 >     - krfp(*string*) - Klekota-Roth fingerprint
