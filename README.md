@@ -50,7 +50,7 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 > Update DataFrame by generating Klekota-Roth fingerprints for structures
 > - Parameters
 >   - data(*DataFrame*) - DataFrame which includes structures in SMILES or Mol format
->   - structures_column(*string*) - name of column which includes structures in SMILES or Mol format
+>   - structures_column(*string*) - name of column which includes structures in SMILES or Mol format (eg. structures_column="KRFP543")
 >   - count(*bool*) - if function should count number of each fingerprint in molecule
 >   - output_type(*string*) - type of output, possible values: {'list','dictionary','dataframe'}
 >   - verbose=(*bool*) - show information about progress
@@ -60,14 +60,14 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 **DrawFingerprint(krfp)**
 > Draw a selected Klekota-Roth fingerprints
 > - Parameters
->   - krfp(*string*) - Klekota-Roth fingerprint
+>   - krfp(*string*) - Klekota-Roth fingerprint (eg. "KRFP543")
 > - Return
 >   - (*Image*) - fingerprints
 
 **DrawFingerprints(krfps, molsPerRow=3)**
 > Draw selected Klekota-Roth fingerprints
 > - Parameters
->   - krfps(*list\[string\]*) - Klekota-Roth fingerprints
+>   - krfps(*list\[string\]*) - Klekota-Roth fingerprints (eg. ["KRFP543","KRFP674","KRFP3374"])
 >   - molsPerRow=3(*int*) - number of structures in a row
 > - Return
 >   - (*Image*) - fingerprints
@@ -85,7 +85,7 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 > Highlight a Klekota-Roth fingerprint in structures
 > - Parameters
 >   - mols(*list\[rdkit.Chem.Mol\]*) - list of structures in Mol format
->   - krfp(*string*) - Klekota-Roth fingerprint
->   - names(*list\[string\]*) - list of molecules' names
+>   - krfp(*string*) - Klekota-Roth fingerprint (eg. "KRFP543")
+>   - names(*list*) - list of molecules' names
 > - Return
 >   - (*Image*) - molecules with highlighted fragment
