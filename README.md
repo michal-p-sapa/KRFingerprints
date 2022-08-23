@@ -46,7 +46,7 @@ Script which generate 4860 Klekota-Roth fingerprints based on structures \[1\]. 
 >   - (*dictionary*) - dictionary of 4860 Klekota-Roth fingerprints
 
 
-**MultipleDescriptorsDataFrame(data, structures_column, count=False, verbose=True)**
+**GenerateKRFingerprintsToDataFrame(data, structures_column, count=False, verbose=True)**
 > Update DataFrame by generating Klekota-Roth fingerprints for structures
 > - Parameters
 >   - data(*DataFrame*) - DataFrame which includes structures in SMILES or Mol format
